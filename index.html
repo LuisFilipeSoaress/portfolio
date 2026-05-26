@@ -1,531 +1,456 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luis Filipe | Portfólio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luis Filipe | Portfolio</title>
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050914;
-      color: #e5ecff;
-    }
+<style>
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: min(1080px, 92%);
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(5, 9, 20, 0.86);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-    }
-
-    nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-    }
-
-    .logo {
-      width: 34px;
-      height: 34px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #7c3aed, #38bdf8);
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
-    }
-
-    .menu {
-      display: flex;
-      gap: 32px;
-      color: #a8b3cf;
-      font-size: 14px;
-    }
-
-    .menu a:hover {
-      color: #fff;
-    }
-
-    .hero {
-      padding: 82px 0 56px;
-      display: grid;
-      grid-template-columns: 220px 1fr 260px;
-      gap: 46px;
-      align-items: center;
-    }
-
-    .photo-card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-    }
-
-  .avatar {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 2px solid rgba(148, 163, 184, 0.22);
-  object-fit: cover;
-  object-position: center;
-  box-shadow: 0 0 60px rgba(124, 58, 237, 0.22);
-}
-}
-    .socials {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-    .socials a {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  border: 1px solid rgba(148, 163, 184, 0.16);
-  background: rgba(15, 23, 42, 0.72);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #cbd5e1;
-  transition: 0.2s;
+body{
+  background:#050816;
+  color:white;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-    .socials a:hover {
-      transform: translateY(-3px);
-      border-color: #38bdf8;
-      color: #38bdf8;
-    }
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .tag {
-      color: #93c5fd;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-      font-family: monospace;
-    }
+header{
+  padding:25px 0;
+}
 
-    h1 {
-      font-size: clamp(44px, 7vw, 78px);
-      line-height: 0.92;
-      letter-spacing: -3px;
-      margin-bottom: 22px;
-    }
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
-    .hero p {
-      color: #a8b3cf;
-      line-height: 1.7;
-      max-width: 620px;
-      font-size: 17px;
-      margin-bottom: 28px;
-    }
+.logo{
+  font-size:22px;
+  font-weight:bold;
+}
 
-    .actions {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
+.logo span{
+  color:#38bdf8;
+}
 
-    .btn {
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+.menu{
+  display:flex;
+  gap:25px;
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, #8b5cf6, #38bdf8);
-      color: #fff;
-      box-shadow: 0 12px 34px rgba(56, 189, 248, 0.18);
-    }
+.menu a{
+  color:#94a3b8;
+  text-decoration:none;
+  transition:0.3s;
+}
 
-    .btn-secondary {
-      color: #cbd5e1;
-      border-color: rgba(148, 163, 184, 0.16);
-    }
+.menu a:hover{
+  color:white;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  flex-wrap:wrap;
+}
 
-    .stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.left{
+  flex:1;
+  min-width:300px;
+}
 
-    .pill {
-      padding: 8px 12px;
-      border-radius: 10px;
-      background: rgba(15, 23, 42, 0.84);
-      border: 1px solid rgba(148, 163, 184, 0.14);
-      color: #b6c3dd;
-      font-size: 12px;
-      font-family: monospace;
-      text-transform: uppercase;
-    }
+.tag{
+  color:#38bdf8;
+  margin-bottom:15px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-size:13px;
+}
 
-    .info-side {
-      display: grid;
-      gap: 16px;
-    }
+h1{
+  font-size:75px;
+  line-height:0.95;
+  margin-bottom:25px;
+}
 
-    .mini-card,
-    .card {
-      background: linear-gradient(180deg, rgba(15, 23, 42, 0.78), rgba(8, 13, 27, 0.78));
-      border: 1px solid rgba(148, 163, 184, 0.12);
-      border-radius: 18px;
-      padding: 22px;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-    }
+.description{
+  color:#94a3b8;
+  line-height:1.7;
+  max-width:600px;
+  margin-bottom:30px;
+  font-size:17px;
+}
 
-    .mini-card small,
-    .card small {
-      display: block;
-      color: #7d8aa5;
-      font-size: 11px;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      letter-spacing: 0.8px;
-    }
+.buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
 
-    .mini-card strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #fff;
-    }
+.btn{
+  padding:14px 24px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
 
-    .status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #cbd5e1;
-    }
+.primary{
+  background:linear-gradient(135deg,#8b5cf6,#38bdf8);
+  color:white;
+}
 
-    .dot {
-      width: 10px;
-      height: 10px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 18px #22c55e;
-    }
+.secondary{
+  border:1px solid #334155;
+  color:white;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1.6fr 0.8fr;
-      gap: 24px;
-      margin: 24px 0;
-    }
+.btn:hover{
+  transform:translateY(-3px);
+}
 
-    .card {
-      border-left: 4px solid rgba(96, 165, 250, 0.35);
-    }
+.techs{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
 
-    .section-title {
-      color: #7d8aa5;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      font-family: monospace;
-    }
+.tech{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  padding:10px 14px;
+  border-radius:10px;
+  color:#cbd5e1;
+  font-size:13px;
+}
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+.right{
+  width:340px;
+}
 
-    .education h2,
-    .experience h2,
-    .projects h2 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
+.card{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  border-radius:22px;
+  padding:30px;
+}
 
-    .muted {
-      color: #7d8aa5;
-      line-height: 1.7;
-    }
+.avatar{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:auto;
+  border:3px solid #38bdf8;
+}
 
-    .timeline {
-      display: grid;
-      gap: 22px;
-    }
+.name{
+  text-align:center;
+  margin-top:20px;
+  font-size:28px;
+  font-weight:bold;
+}
 
-    .item {
-      padding-left: 18px;
-      border-left: 1px solid rgba(148, 163, 184, 0.18);
-    }
+.job{
+  text-align:center;
+  color:#94a3b8;
+  margin-top:8px;
+}
 
-    .item h3 {
-      color: #fff;
-      margin-bottom: 6px;
-    }
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:25px;
+}
 
-    .item p {
-      color: #a8b3cf;
-      line-height: 1.6;
-    }
+.socials a{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#111827;
+  border:1px solid #1e293b;
+  color:white;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+.socials a:hover{
+  background:#38bdf8;
+  transform:translateY(-4px);
+}
 
-    .project {
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.12);
-      transition: 0.2s;
-    }
+.section{
+  margin-top:80px;
+}
 
-    .project:hover {
-      transform: translateY(-5px);
-      border-color: rgba(56, 189, 248, 0.45);
-    }
+.section-title{
+  font-size:35px;
+  margin-bottom:30px;
+}
 
-    .project h3 {
-      margin-bottom: 10px;
-    }
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+}
 
-    .project p {
-      color: #a8b3cf;
-      line-height: 1.6;
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
+.skill{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  padding:14px 18px;
+  border-radius:12px;
+}
 
-    footer {
-      padding: 42px 0;
-      color: #7d8aa5;
-      font-size: 13px;
-      border-top: 1px solid rgba(148, 163, 184, 0.12);
-      margin-top: 55px;
-    }
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-    footer .container {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-family: monospace;
-      letter-spacing: 1px;
-    }
+.project{
+  background:#0f172a;
+  border:1px solid #1e293b;
+  padding:25px;
+  border-radius:18px;
+  transition:0.3s;
+}
 
-    @media (max-width: 920px) {
-      .hero,
-      .grid {
-        grid-template-columns: 1fr;
-      }
+.project:hover{
+  transform:translateY(-5px);
+  border-color:#38bdf8;
+}
 
-      .photo-card {
-        align-items: flex-start;
-      }
+.project h3{
+  margin-bottom:15px;
+}
 
-      .project-grid {
-        grid-template-columns: 1fr;
-      }
+.project p{
+  color:#94a3b8;
+  line-height:1.6;
+}
 
-      .menu {
-        display: none;
-      }
+footer{
+  margin-top:80px;
+  padding:30px 0;
+  text-align:center;
+  color:#64748b;
+  border-top:1px solid #1e293b;
+}
 
-      h1 {
-        letter-spacing: -1px;
-      }
-    }
-  </style>
+@media(max-width:900px){
+
+.hero{
+  flex-direction:column;
+  text-align:center;
+}
+
+.description{
+  margin:auto;
+  margin-bottom:30px;
+}
+
+.buttons{
+  justify-content:center;
+}
+
+.techs{
+  justify-content:center;
+}
+
+h1{
+  font-size:55px;
+}
+
+.right{
+  width:100%;
+  max-width:400px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <header>
-    <nav class="container">
-      <a class="brand" href="#">
-        <span class="logo">LF</span>
-        <span>Luis Filipe<br><small style="color:#7d8aa5;font-weight:500">Computer Science Student</small></span>
-      </a>
-      <div class="menu">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </header>
 
-  <main class="container">
-    <section class="hero" id="about">
-      <div class="photo-card">
-        <img class="avatar" src="https://cdn.discordapp.com/attachments/1098755797460193453/1508922986244341790/WhatsApp_Image_2026-05-26_at_15.40.51.jpeg?ex=6a174d8a&is=6a15fc0a&hm=8cbb03587e107181c4ea9790aa7f52be86d1571d745cdc5cfac55dbc5bf4a02b&" alt="Luis Filipe">
-        <div class="socials">
-          <a href="https://github.com/LuisFilipeSoaress" target="_blank">GH</a>
-          <a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank">IN</a>
-          <a href="https://www.instagram.com/devbylipe/" target="_blank">IG</a>
-        </div>
-      </div>
+<header class="container">
 
-      <div>
-        <div class="tag">&lt;/&gt; Tecnologia • Infraestrutura • Automação</div>
-        <h1>Luis Filipe<br>Soares</h1>
-        <p>
-          Estudante de Ciência da Computação focado em desenvolvimento, infraestrutura de TI e automação. Busco evoluir na área de tecnologia criando projetos práticos, organizados e com propósito real.
-        </p>
-        <div class="actions">
-          <a href="#projects" class="btn btn-primary">Ver Projetos</a>
-          <a href="#contact" class="btn btn-secondary">Contato</a>
-        </div>
-        <div class="stack">
-          <span class="pill">Python</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">HTML</span>
-          <span class="pill">CSS</span>
-          <span class="pill">GitHub</span>
-        </div>
-      </div>
+<nav>
 
-      <aside class="info-side">
-        <div class="mini-card">
-          <small>Current position</small>
-          <strong>Assistente de Operações Telecom</strong>
-          <span class="muted">Conect Veloz</span>
-        </div>
-        <div class="mini-card">
-          <small>Education</small>
-          <strong>Ciência da Computação</strong>
-          <span class="muted">Estácio • 2023 - 2027</span>
-        </div>
-        <div class="mini-card">
-          <small>Status</small>
-          <div class="status"><span class="dot"></span> Aberto a oportunidades em TI</div>
-        </div>
-      </aside>
-    </section>
+<div class="logo">
+Luis <span>Filipe</span>
+</div>
 
-    <section class="grid">
-      <div class="card">
-        <div class="section-title">Skills</div>
-        <div class="skills">
-          <span class="pill">Programação</span>
-          <span class="pill">Lógica de Programação</span>
-          <span class="pill">Python</span>
-          <span class="pill">JavaScript</span>
-          <span class="pill">Banco de Dados</span>
-          <span class="pill">Infraestrutura de TI</span>
-          <span class="pill">Redes de Computadores</span>
-          <span class="pill">Suporte Técnico</span>
-          <span class="pill">TCP/IP</span>
-          <span class="pill">Git/GitHub</span>
-        </div>
-      </div>
+<div class="menu">
+<a href="#skills">Skills</a>
+<a href="#projects">Projetos</a>
+<a href="#contact">Contato</a>
+</div>
 
-      <div class="card">
-        <div class="section-title">Social networks</div>
-<div class="socials">  
-          <a href="https://github.com/LuisFilipeSoaress" target="_blank">GH</a>
-          <a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank">IN</a>
-          <a href="https://www.instagram.com/devbylipe/" target="_blank">IG</a>
-        </div>
-        <p class="muted">Acompanhe meus projetos, estudos e evolução na área de tecnologia.</p>
-      </div>
-    </section>
+</nav>
 
-    <section class="grid" id="experience">
-      <div class="card experience">
-        <div class="section-title">Experience</div>
-        <div class="timeline">
-          <div class="item">
-            <h3>Assistente de Operações Telecom</h3>
-            <p>Distribuição e acompanhamento de Ordens de Serviço, suporte às equipes técnicas, controle de materiais e organização de demandas operacionais.</p>
-            <p class="muted">Conect Veloz • mai 2026 - atualmente</p>
-          </div>
-          <div class="item">
-            <h3>Técnico de Telecomunicações</h3>
-            <p>Instalação e manutenção de serviços de internet, configuração de equipamentos, diagnóstico técnico e atendimento em campo.</p>
-            <p class="muted">Conect Veloz • fev 2026 - mai 2026</p>
-          </div>
-        </div>
-      </div>
+</header>
 
-      <div class="card">
-        <div class="section-title">Status</div>
-        <p class="status"><span class="dot"></span> Disponível para networking</p>
-        <br>
-        <p class="muted">Rio Bonito, RJ</p>
-        <p class="muted">Foco: TI, Desenvolvimento, Infraestrutura e Automação</p>
-      </div>
-    </section>
+<section class="hero container">
 
-    <section class="card education" id="education">
-      <div class="section-title">Education</div>
-      <h2>Bacharelado em Ciência da Computação</h2>
-      <p class="muted">Estácio • 2023 - 2027</p>
-    </section>
+<div class="left">
 
-    <section class="card projects" id="projects" style="margin-top:24px">
-      <div class="section-title">Projects</div>
-      <div class="project-grid">
-        <article class="project">
-          <h3>Portfólio Pessoal</h3>
-          <p>Site pessoal moderno para apresentar habilidades, experiências, formação e projetos na área de tecnologia.</p>
-          <div class="stack"><span class="pill">HTML</span><span class="pill">CSS</span></div>
-        </article>
-        <article class="project">
-          <h3>Automação com Python</h3>
-          <p>Projeto para organizar dados e reduzir tarefas repetitivas usando lógica de programação e scripts simples.</p>
-          <div class="stack"><span class="pill">Python</span><span class="pill">Automação</span></div>
-        </article>
-        <article class="project">
-          <h3>Dashboard de Estudos</h3>
-          <p>Ideia de painel para acompanhar matérias, progresso semanal e evolução nos estudos de programação.</p>
-          <div class="stack"><span class="pill">JavaScript</span><span class="pill">UI</span></div>
-        </article>
-      </div>
-    </section>
-  </main>
+<div class="tag">
+Tecnologia • Programação • Infraestrutura
+</div>
 
-  <footer id="contact">
-    <div class="container">
-      <span>© 2026 LUIS_FILIPE — TODOS OS DIREITOS RESERVADOS</span>
-      <span>GITHUB • LINKEDIN • EMAIL</span>
-    </div>
-  </footer>
+<h1>
+Luis Filipe<br>
+Soares
+</h1>
+
+<p class="description">
+Estudante de Ciência da Computação focado em tecnologia, programação e automação. Buscando evolução constante através de projetos práticos e desenvolvimento de habilidades na área de TI.
+</p>
+
+<div class="buttons">
+
+<a href="https://github.com/LuisFilipeSoaress" target="_blank" class="btn primary">
+GitHub
+</a>
+
+<a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank" class="btn secondary">
+LinkedIn
+</a>
+
+</div>
+
+<div class="techs">
+
+<div class="tech">Python</div>
+<div class="tech">JavaScript</div>
+<div class="tech">HTML</div>
+<div class="tech">CSS</div>
+<div class="tech">GitHub</div>
+<div class="tech">Infraestrutura</div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="card">
+
+<img class="avatar" src="https://cdn.discordapp.com/attachments/1098755797460193453/1508922986244341790/WhatsApp_Image_2026-05-26_at_15.40.51.jpeg?ex=6a174d8a&is=6a15fc0a&hm=8cbb03587e107181c4ea9790aa7f52be86d1571d745cdc5cfac55dbc5bf4a02b&">
+
+<div class="name">
+Luis Filipe
+</div>
+
+<div class="job">
+Computer Science Student
+</div>
+
+<div class="socials">
+
+<a href="https://github.com/LuisFilipeSoaress" target="_blank">
+GH
+</a>
+
+<a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank">
+IN
+</a>
+
+<a href="https://www.instagram.com/devbylipe/" target="_blank">
+IG
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section container" id="skills">
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<div class="skills">
+
+<div class="skill">Programação</div>
+<div class="skill">Python</div>
+<div class="skill">JavaScript</div>
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">Git/GitHub</div>
+<div class="skill">Infraestrutura de TI</div>
+<div class="skill">Redes</div>
+<div class="skill">TCP/IP</div>
+<div class="skill">Suporte Técnico</div>
+
+</div>
+
+</section>
+
+<section class="section container" id="projects">
+
+<h2 class="section-title">
+Projetos
+</h2>
+
+<div class="projects">
+
+<div class="project">
+<h3>Portfolio Pessoal</h3>
+<p>
+Site moderno desenvolvido para apresentar minhas habilidades, projetos e evolução na área de tecnologia.
+</p>
+</div>
+
+<div class="project">
+<h3>Automação com Python</h3>
+<p>
+Projeto voltado para automatizar tarefas repetitivas e organizar dados de forma eficiente.
+</p>
+</div>
+
+<div class="project">
+<h3>Dashboard Tech</h3>
+<p>
+Painel visual para acompanhar estudos, produtividade e evolução em programação.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+Luis Filipe • 2026 • Portfolio Developer
+
+</footer>
+
 </body>
 </html>
