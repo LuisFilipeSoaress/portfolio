@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luis Filipe | Portfólio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050914;
+      color: #e5ecff;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(5, 9, 20, 0.86);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #7c3aed, #38bdf8);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.25);
+    }
+
+    .menu {
+      display: flex;
+      gap: 32px;
+      color: #a8b3cf;
+      font-size: 14px;
+    }
+
+    .menu a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 82px 0 56px;
+      display: grid;
+      grid-template-columns: 220px 1fr 260px;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .photo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #111827, #1e293b);
+      border: 2px solid rgba(148, 163, 184, 0.22);
+      display: grid;
+      place-items: center;
+      font-size: 46px;
+      font-weight: 900;
+      color: #38bdf8;
+      box-shadow: 0 0 60px rgba(124, 58, 237, 0.22);
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: rgba(15, 23, 42, 0.72);
+      display: grid;
+      place-items: center;
+      color: #cbd5e1;
+      transition: 0.2s;
+    }
+
+    .socials a:hover {
+      transform: translateY(-3px);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    .tag {
+      color: #93c5fd;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-family: monospace;
+    }
+
+    h1 {
+      font-size: clamp(44px, 7vw, 78px);
+      line-height: 0.92;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      color: #a8b3cf;
+      line-height: 1.7;
+      max-width: 620px;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6, #38bdf8);
+      color: #fff;
+      box-shadow: 0 12px 34px rgba(56, 189, 248, 0.18);
+    }
+
+    .btn-secondary {
+      color: #cbd5e1;
+      border-color: rgba(148, 163, 184, 0.16);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.84);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      color: #b6c3dd;
+      font-size: 12px;
+      font-family: monospace;
+      text-transform: uppercase;
+    }
+
+    .info-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .mini-card,
+    .card {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.78), rgba(8, 13, 27, 0.78));
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .mini-card small,
+    .card small {
+      display: block;
+      color: #7d8aa5;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0.8px;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #cbd5e1;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 18px #22c55e;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.6fr 0.8fr;
+      gap: 24px;
+      margin: 24px 0;
+    }
+
+    .card {
+      border-left: 4px solid rgba(96, 165, 250, 0.35);
+    }
+
+    .section-title {
+      color: #7d8aa5;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-family: monospace;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .education h2,
+    .experience h2,
+    .projects h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .muted {
+      color: #7d8aa5;
+      line-height: 1.7;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 22px;
+    }
+
+    .item {
+      padding-left: 18px;
+      border-left: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .item h3 {
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .item p {
+      color: #a8b3cf;
+      line-height: 1.6;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      transition: 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    .project h3 {
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: #a8b3cf;
+      line-height: 1.6;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      padding: 42px 0;
+      color: #7d8aa5;
+      font-size: 13px;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+      margin-top: 55px;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card {
+        align-items: flex-start;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#">
+        <span class="logo">LF</span>
+        <span>Luis Filipe<br><small style="color:#7d8aa5;font-weight:500">Computer Science Student</small></span>
+      </a>
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="about">
+      <div class="photo-card">
+        <img class="avatar" src="https://cdn.discordapp.com/attachments/1098755797460193453/1508922986244341790/WhatsApp_Image_2026-05-26_at_15.40.51.jpeg?ex=6a174d8a&is=6a15fc0a&hm=8cbb03587e107181c4ea9790aa7f52be86d1571d745cdc5cfac55dbc5bf4a02b&" alt="Luis Filipe">
+        <div class="socials">
+          <a href="https://github.com/LuisFilipeSoares" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank">IN</a>
+          <a href="https://www.instagram.com/devbylipe/" target="_blank">IG</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tag">&lt;/&gt; Tecnologia • Infraestrutura • Automação</div>
+        <h1>Luis Filipe<br>Soares</h1>
+        <p>
+          Estudante de Ciência da Computação focado em desenvolvimento, infraestrutura de TI e automação. Busco evoluir na área de tecnologia criando projetos práticos, organizados e com propósito real.
+        </p>
+        <div class="actions">
+          <a href="#projects" class="btn btn-primary">Ver Projetos</a>
+          <a href="#contact" class="btn btn-secondary">Contato</a>
+        </div>
+        <div class="stack">
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+          <span class="pill">GitHub</span>
+        </div>
+      </div>
+
+      <aside class="info-side">
+        <div class="mini-card">
+          <small>Current position</small>
+          <strong>Assistente de Operações Telecom</strong>
+          <span class="muted">Conect Veloz</span>
+        </div>
+        <div class="mini-card">
+          <small>Education</small>
+          <strong>Ciência da Computação</strong>
+          <span class="muted">Estácio • 2023 - 2027</span>
+        </div>
+        <div class="mini-card">
+          <small>Status</small>
+          <div class="status"><span class="dot"></span> Aberto a oportunidades em TI</div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="section-title">Skills</div>
+        <div class="skills">
+          <span class="pill">Programação</span>
+          <span class="pill">Lógica de Programação</span>
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Banco de Dados</span>
+          <span class="pill">Infraestrutura de TI</span>
+          <span class="pill">Redes de Computadores</span>
+          <span class="pill">Suporte Técnico</span>
+          <span class="pill">TCP/IP</span>
+          <span class="pill">Git/GitHub</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Social networks</div>
+        <div class="socials" style="justify-content:flex-start;margin-bottom:18px">
+          <a href="https://github.com/LuisFilipeSoares" target="_blank">GH</a>
+          <a href="https://www.linkedin.com/in/luis-filipe-nascimento-torres-soares-abbb942b1/?skipRedirect=true" target="_blank">IN</a>
+          <a href="https://www.instagram.com/devbylipe/" target="_blank">IG</a>
+        </div>
+        <p class="muted">Acompanhe meus projetos, estudos e evolução na área de tecnologia.</p>
+      </div>
+    </section>
+
+    <section class="grid" id="experience">
+      <div class="card experience">
+        <div class="section-title">Experience</div>
+        <div class="timeline">
+          <div class="item">
+            <h3>Assistente de Operações Telecom</h3>
+            <p>Distribuição e acompanhamento de Ordens de Serviço, suporte às equipes técnicas, controle de materiais e organização de demandas operacionais.</p>
+            <p class="muted">Conect Veloz • mai 2026 - atualmente</p>
+          </div>
+          <div class="item">
+            <h3>Técnico de Telecomunicações</h3>
+            <p>Instalação e manutenção de serviços de internet, configuração de equipamentos, diagnóstico técnico e atendimento em campo.</p>
+            <p class="muted">Conect Veloz • fev 2026 - mai 2026</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Status</div>
+        <p class="status"><span class="dot"></span> Disponível para networking</p>
+        <br>
+        <p class="muted">Rio Bonito, RJ</p>
+        <p class="muted">Foco: TI, Desenvolvimento, Infraestrutura e Automação</p>
+      </div>
+    </section>
+
+    <section class="card education" id="education">
+      <div class="section-title">Education</div>
+      <h2>Bacharelado em Ciência da Computação</h2>
+      <p class="muted">Estácio • 2023 - 2027</p>
+    </section>
+
+    <section class="card projects" id="projects" style="margin-top:24px">
+      <div class="section-title">Projects</div>
+      <div class="project-grid">
+        <article class="project">
+          <h3>Portfólio Pessoal</h3>
+          <p>Site pessoal moderno para apresentar habilidades, experiências, formação e projetos na área de tecnologia.</p>
+          <div class="stack"><span class="pill">HTML</span><span class="pill">CSS</span></div>
+        </article>
+        <article class="project">
+          <h3>Automação com Python</h3>
+          <p>Projeto para organizar dados e reduzir tarefas repetitivas usando lógica de programação e scripts simples.</p>
+          <div class="stack"><span class="pill">Python</span><span class="pill">Automação</span></div>
+        </article>
+        <article class="project">
+          <h3>Dashboard de Estudos</h3>
+          <p>Ideia de painel para acompanhar matérias, progresso semanal e evolução nos estudos de programação.</p>
+          <div class="stack"><span class="pill">JavaScript</span><span class="pill">UI</span></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <span>© 2026 LUIS_FILIPE — TODOS OS DIREITOS RESERVADOS</span>
+      <span>GITHUB • LINKEDIN • EMAIL</span>
+    </div>
+  </footer>
+</body>
+</html>
